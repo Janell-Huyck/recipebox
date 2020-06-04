@@ -1,0 +1,40 @@
+{% comment %} Conditional classes for navigation links logic provided by
+            https://stackoverflow.com/questions/9793576/how-to-render-menu-with-one-active-item-with-dry {% endcomment %}
+            <div class="topnav">
+
+                {% comment %} Everyone Can See {% endcomment %}
+                <div>
+                    <a href="{% url "home" %}" class="{% if request.resolver_match.url_name == "home" %}active{% endif %}">Home</a>
+                </div>
+
+                {% comment %} All logged in users can see {% endcomment %}
+                {% if user.is_authenticated %}
+                    <div>
+                        <a href="{% url "add_recipe" %}" class="{% if request.resolver_match.url_name == "add_recipe" %}active{% endif %}">Add Recipe</a>
+                    </div>
+                {% endif %}
+
+                {% comment %} Only staff can see {% endcomment %}
+                {% if user.is_authenticated and user.is_staff %}
+                    <div>
+                        <a href="{% url "add_author" %}" class="{% if request.resolver_match.url_name == "add_author" %}active{% endif %}">Add Author</a>
+                    </div>
+                {%endif%}
+
+                {% comment %} Only shows if you're logged out {% endcomment %}
+                {% if not user.is_authenticated %}
+                    <div>
+                        <a href="{% url "login" %}" class="{% if request.resolver_match.url_name == "login" %}active{% endif %}">Log In</a>
+                    </div>
+                {%endif%}
+
+                {% comment %} Only shows if you're logged in. {% endcomment %}
+                {% if user.is_authenticated %}
+                    <div>
+                        <a href="{% url 'logout' %}?next={% url 'home'%}"> Logout</a>
+                    </div>
+                    <div class="signedIn">
+                        Logged in as: {{user.username}}
+                    </div>
+                {%endif%}
+            </div>

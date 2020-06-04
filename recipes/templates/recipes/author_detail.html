@@ -3,7 +3,7 @@
 {%block content%}
     <h2>{{author.name}}</h2>
     <h3>Bio</h3>
-    {{author.about|linebreaksbr}}
+    {{author.bio|linebreaksbr}}
     <h3>Recipes Contributed</h3>
     <ul>
     {% for recipe in recipes %}

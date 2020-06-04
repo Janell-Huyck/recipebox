@@ -24,19 +24,25 @@ body {
 
 /* Add a black background color to the top navigation */
 .topnav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: #333;
   overflow: hidden;
+  padding: 14px 16px;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
+  align-self: flex-start;
+  /* float: left; */
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
+
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -48,4 +54,15 @@ body {
 .topnav a.active {
   background-color: rgb(236, 100, 10);
   color: white;
+}
+
+/* The "signed in as" tag in header */
+.signedIn {
+  align-self: flex-end;
+  justify-self: flex-end;
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
 }

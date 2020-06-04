@@ -8,15 +8,8 @@
     <body>
         <header>
             <h1>RecipeBox</h1>
-            {% comment %} Conditional classes for navigation links logic provided by
-            https://stackoverflow.com/questions/9793576/how-to-render-menu-with-one-active-item-with-dry {% endcomment %}
-            <div class="topnav">
-                <a href="{% url "home" %}" class="{% if request.resolver_match.url_name == "home" %}active{% endif %}">Home</a>
-                <a href="{% url "add_author" %}" class="{% if request.resolver_match.url_name == "add_author" %}active{% endif %}">Add Author</a>
-                <a href="{% url "add_recipe" %}" class="{% if request.resolver_match.url_name == "add_recipe" %}active{% endif %}">Add Recipe</a>
-            </div>
+            {%include 'recipes/menubar.html'%}
         </header>
-
             {% block content %}
             {% endblock %}
 
