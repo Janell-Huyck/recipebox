@@ -25,7 +25,7 @@ This is my first project in Django. In it, I'm exploring and learning about mode
 admin users, using SQLite, migrating, templates, and using the Django template language.  It is
 also my first time using Poetry to create a virtual environment.  
 
-Let's get started...
+Let's get started!
 
 <img src="./assets/images/digital_kitchen.jpg" alt="digital kitchen"/><br>
 Image by <a href="https://pixabay.com/users/StockSnap-894430/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2565479">StockSnap</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2565479">Pixabay</a>
